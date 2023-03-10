@@ -17,7 +17,7 @@ We plan to build a machine learning model that predicts the likelihood of findin
 
 `mass(g)` - Meteorite mass in grams
 
-`fall - Distinction on whether the meteorite was found already on Earth (found) or its trajectory and fall was tracked way before it reaches the Earth's atmosphere (fell).
+`fell` - Distinction on whether the meteorite was found already on Earth (found) or its trajectory and fall was tracked way before it reaches the Earth's atmosphere (fell).
 
 `year` - Year by which the metorite was discovered
 
