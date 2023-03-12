@@ -4,6 +4,11 @@ Project proposal:
 
 We plan to build a machine learning model that predicts the likelihood of finding a meteorite based on a comprehensive dataset from the meteorological society. We ultimately hope to build a web app that allows you to enter a geolocation that returns the likelihood of a meterotie falling being found.
 
+Train model to identify areas of potentially unfound meteorites for meteorite hunters to search.
+-population density
+-land area
+-land coverage/terrain type (mountainous, rainforest, etc)
+
 
 #### Based on the table schema and data description, the csv file contains the following variable:
 
