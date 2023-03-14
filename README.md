@@ -31,3 +31,8 @@ Train model to identify areas of potentially unfound meteorites for meteorite hu
 `reclong` - Longtitude coordinate of the meteorite discovery
 
 `GeoLocation` - Complete geo-location coordinate of the meteorite discovery
+
+#### Sources:
+
+OECD Land Area Data
+Haščič, I. and A. Mackie (2018), "Land Cover Change and Conversions: Methodology and Results for OECD and G20 Countries", OECD Green Growth Papers, No. 2018/04, OECD Publishing, Paris, https://doi.org/10.1787/72a9e331-en.
