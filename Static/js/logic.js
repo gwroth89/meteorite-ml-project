@@ -5,67 +5,62 @@ let lat;
 
 
 
-// // create map
-// let myMap = L.map("map", {
-//     minzoom: 0,
-//     maxzoom: 0
-// });
-    
-function createMap(meteors) {
-    console.log(meteors)
-        //Create the tile layer that will be the background
+let maxBounds = L.latLngBounds(
+    L.latLng(5.499550, -167.276413),
+    L.latLng(83.162102,-52.233040)
+)
 
-        console.log(map)
-        //Create basemaps to hold the lightmap layer
-        let baseMaps = {
-                Map: map
-            };
-    
-        let overlayMaps = {
-            meteor_locations: meteors
-        }
+function createMap(meteors) {
+    console.log()
     
         //Create the map object 
         let myMap = L.map("map", {
-            minzoom: 0,
-            maxzoom: 0
-        });
-
-        myMap.setView([0,0], 2);
-
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-        }).addTo(myMap)
-
+            'center': [0,0],
+            'zoom': 0,
+            
+        }).fitBounds(maxBounds);
+        myMap.setMaxBounds(  [[-90,-180],   [90,180]]  )
         
-    // L.control.layers(baseMaps, overlayMaps).addTo(myMap)}
+       
+
+       tilelayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+            }).addTo(myMap)
+
+        let overlayMaps = {
+            'Meteor Locations': meteors
+        }
+
+    L.control.layers(overlayMaps).addTo(myMap)
 }
+
 
 // // add markers
 function getmarkers(response) { 
 
     let meteor_layer = L.layerGroup();
-
+    
     latt = response.reclat;
     lngg = response.reclong;
-    // console.log(object.keys(latt).length)
     
-    for (let i = 0; i < 100; i++) {
+    loop_length = Object.keys(latt).length
+    
+    for (let i = 0; i < loop_length; i++) {
         let lat = latt[i]
         let lng = lngg[i]
-        console.log(lat)
-        L.marker([lat, lng]).addTo(meteor_layer)
+     
+        L.circleMarker([lat, lng], {
+            radius:1
+        }).addTo(meteor_layer)
     }
     
-    createMap(meteor_layer)
-//     // console.log(lat)
-//     // lat.foreach(function(lat, index){
-//     //     L.marker(lat, lng[index]).addTo(myMap)
-//     // })
-           
+    //pass the markers to the createMap function
+    createMap(meteor_layer);
 };
 
 
 d3.json(data).then(function(response) {
+    // pass data to getmarkers function 
     getmarkers(response)
 })
+
