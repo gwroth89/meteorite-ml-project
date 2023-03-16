@@ -3,23 +3,29 @@ let data = "../Resources/meteorite.json";
 let lng;  
 let lat; 
 
-
-
-let maxBounds = L.latLngBounds(
-    L.latLng(5.499550, -167.276413),
-    L.latLng(83.162102,-52.233040)
-)
-
+//initialize state data for borders
+let statedata = "../Resources/state_GEO.json"
+console.log(statedata)
 function createMap(meteors) {
     console.log()
-    
+
+        let overlayMaps = {
+            'Meteor Locations': meteors
+    }
+        let statelayer = L.geoJson(statedata, {
+        // style: statestyle,
+        // onEachFeature: onEachState
+        })
+
         //Create the map object 
         let myMap = L.map("map", {
-            'center': [0,0],
-            'zoom': 0,
+            center: [40.2659, -96.7467],
+            zoom: 4,
+            layers: [meteors, statelayer],
+            scrollWheelZoom: false
             
-        }).fitBounds(maxBounds);
-        myMap.setMaxBounds(  [[-90,-180],   [90,180]]  )
+        });
+        
         
        
 
@@ -27,11 +33,10 @@ function createMap(meteors) {
             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
             }).addTo(myMap)
 
-        let overlayMaps = {
-            'Meteor Locations': meteors
-        }
+        
 
     L.control.layers(overlayMaps).addTo(myMap)
+    
 }
 
 

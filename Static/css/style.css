@@ -2,15 +2,17 @@ html,
 body,
 #map {
   height: 100%;
-  padding: 0;
-  margin: 0;
+  width: 100%;
+  padding: 5px;
+  margin: 5px;
 }
 
 #map,
 body,
 html {
-  height: 400px;
-  width: 500px
+  position:absolute;
+  height: 700px;
+  width: 700px
 }
 
 .panel {
@@ -24,20 +26,23 @@ html {
 }
 
 #map-container-fluid {
-  position: relative;
-  height: 450px;
+  position: center;
+  height: 100%;
   width: 100%;
-  margin-bottom: 30px;
+  margin-bottom: 5px;
   border-bottom-color: gray;
   border-bottom-width: 4px;
 }
 
 #map-frame,
  .panel {
-  height: inherit;
-  width: inherit;
+  height: 100%;
+  width: 100%;
   position: relative;
   border-style: solid;
   border-color: gray;
-  border-width: 4px;
+  border-width: 5px;
+  -moz-box-sizing:border-box;
+  -webkit-box-sizing:border-box;
+  box-sizing:border-box;
 }
