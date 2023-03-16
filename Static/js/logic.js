@@ -4,7 +4,8 @@ let lng;
 let lat; 
 
 //initialize state data for borders
-let statedata = "../Resources/state_GEO.json"
+let statedata = "../Resources/state-data.js"
+
 console.log(statedata)
 function createMap(meteors) {
     console.log()
