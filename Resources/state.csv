@@ -1,0 +1,53 @@
+state_abbrev,state,area_sqkm,country
+AL,Alabama,135767,United States
+AK,Alaska,1723337,United States
+AZ,Arizona,295234,United States
+AR,Arkansas,137732,United States
+CA,California,423967,United States
+CO,Colorado,269601,United States
+CT,Connecticut,14357,United States
+DE,Delaware,6446,United States
+DC,District of Columbia,177,United States
+FL,Florida,170312,United States
+GA,Georgia,153910,United States
+HI,Hawaii,28313,United States
+ID,Idaho,216443,United States
+IL,Illinois,149995,United States
+IN,Indiana,94326,United States
+IA,Iowa,145746,United States
+KS,Kansas,213100,United States
+KY,Kentucky,104656,United States
+LA,Louisiana,135659,United States
+ME,Maine,91633,United States
+MD,Maryland,32131,United States
+MA,Massachusetts,27336,United States
+MI,Michigan,250487,United States
+MN,Minnesota,225163,United States
+MS,Mississippi,125438,United States
+MO,Missouri,180540,United States
+MT,Montana,380831,United States
+NE,Nebraska,200330,United States
+NV,Nevada,286380,United States
+NH,New Hampshire,24214,United States
+NJ,New Jersey,22591,United States
+NM,New Mexico,314917,United States
+NY,New York,141297,United States
+NC,North Carolina,139391,United States
+ND,North Dakota,183108,United States
+OH,Ohio,116098,United States
+OK,Oklahoma,181037,United States
+OR,Oregon,254799,United States
+PA,Pennsylvania,119280,United States
+PR,Puerto Rico,13791,United States
+RI,Rhode Island,4001,United States
+SC,South Carolina,82933,United States
+SD,South Dakota,199729,United States
+TN,Tennessee,109153,United States
+TX,Texas,695662,United States
+UT,Utah,219882,United States
+VT,Vermont,24906,United States
+VA,Virginia,110787,United States
+WA,Washington,184661,United States
+WV,West Virginia,62756,United States
+WI,Wisconsin,169635,United States
+WY,Wyoming,253335,United States
