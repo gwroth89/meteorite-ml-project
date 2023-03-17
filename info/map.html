@@ -25,33 +25,56 @@
 
 </head>
 <body>
-    <div class= "container">
-        <div class="row">
-            <div class="col-4 d-flex justify-content-center">
-                <h1>Meteroites found in the USA</h1>
-            </div>
-            
-            <!-- <div id="map-container-fluid">
-              <div id="map-frame">
-                <div id="map"></div>
-              </div>
-            </div> -->
+  <div class= "container-fluid">
+    <div class="row">
+      <div class="col-md-12 jumbotron text-center">
+        <h1>Meteroites found in the USA</h1>
+      </div>
+    </div>
+  
+
+    <div class = "row">
+      <div class = "col-md-12"> 
+        <div id="map-frame">
+          <div id="map"></div>
         </div>
+      </div>
+    </div>
 
-        <div id="map-container-fluid">
-            <div id="map-frame">
-              <div id="map"></div>
-            </div>
+  
+
+  
+    <div class="row">
+      <div class="col-md-2">
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title">State Info</h3>
+          </div>
+            <div id="sample-metadata" class="panel-body"></div>
         </div>
+      </div>
+    </div>
+  
 
+    <div class="col-md-5">
+      <div id="bar"></div>
+    </div>
+    <div class="col-md-5">
+      <div id="gauge"></div>
+    </div>
 
-
-    <!-- The div where we'll insert our map -->
-    <div id="map" style="height: 100%; width: 100%;"></div>
-
-    <!-- JavaScript file -->
+    <div class="row">
+      <div class="col-md-12">
+        <div id="bubble"></div>
+      </div>
+    </div>
+  
+  </div>
+    
+    <!-- scripts -->
     <script type="text/javascript" src="../Static/js/logic.js"></script>
-
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 </body>
 
 </html>
