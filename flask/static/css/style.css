@@ -1,0 +1,45 @@
+#map,
+body,
+html {
+  position:static;
+  height:100%;
+  width: 100%
+}
+
+.h1 {
+  text-align: center;
+}
+
+.h3 {
+  text-align: center;
+
+}
+
+.panel {
+  margin-bottom: 20px;
+}
+
+.panel-heading {
+  background-color:rgb(202, 199, 199);
+  text-align:center;
+  border-bottom-style: solid;
+}
+
+/* #map-container-fluid {
+  position: center;
+  height: 100%;
+  width: 100%;
+  margin-bottom: 5px;
+  border-bottom-color: gray;
+  border-bottom-width: 4px;
+} */
+
+#map-frame,
+ .panel {
+  height: 675px;
+  width: 675px;
+  position: static;
+  border-style: solid;
+  border-color: gray;
+  border-width: 5px;
+}
