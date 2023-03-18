@@ -1,0 +1,53 @@
+state_abbrev,state,FIPS,FIPS_char,area_sqkm,country
+AL,Alabama,1,1,135767,United States
+AK,Alaska,2,2,1723337,United States
+AZ,Arizona,4,4,295234,United States
+AR,Arkansas,5,5,137732,United States
+CA,California,6,6,423967,United States
+CO,Colorado,8,8,269601,United States
+CT,Connecticut,9,9,14357,United States
+DE,Delaware,10,10,6446,United States
+DC,District of Columbia,11,11,177,United States
+FL,Florida,12,12,170312,United States
+GA,Georgia,13,13,153910,United States
+HI,Hawaii,15,15,28313,United States
+ID,Idaho,16,16,216443,United States
+IL,Illinois,17,17,149995,United States
+IN,Indiana,18,18,94326,United States
+IA,Iowa,19,19,145746,United States
+KS,Kansas,20,20,213100,United States
+KY,Kentucky,21,21,104656,United States
+LA,Louisiana,22,22,135659,United States
+ME,Maine,23,23,91633,United States
+MD,Maryland,24,24,32131,United States
+MA,Massachusetts,25,25,27336,United States
+MI,Michigan,26,26,250487,United States
+MN,Minnesota,27,27,225163,United States
+MS,Mississippi,28,28,125438,United States
+MO,Missouri,29,29,180540,United States
+MT,Montana,30,30,380831,United States
+NE,Nebraska,31,31,200330,United States
+NV,Nevada,32,32,286380,United States
+NH,New Hampshire,33,33,24214,United States
+NJ,New Jersey,34,34,22591,United States
+NM,New Mexico,35,35,314917,United States
+NY,New York,36,36,141297,United States
+NC,North Carolina,37,37,139391,United States
+ND,North Dakota,38,38,183108,United States
+OH,Ohio,39,39,116098,United States
+OK,Oklahoma,40,40,181037,United States
+OR,Oregon,41,41,254799,United States
+PA,Pennsylvania,42,42,119280,United States
+PR,Puerto Rico,72,72,13791,United States
+RI,Rhode Island,44,44,4001,United States
+SC,South Carolina,45,45,82933,United States
+SD,South Dakota,46,46,199729,United States
+TN,Tennessee,47,47,109153,United States
+TX,Texas,48,48,695662,United States
+UT,Utah,49,49,219882,United States
+VT,Vermont,50,50,24906,United States
+VA,Virginia,51,51,110787,United States
+WA,Washington,53,53,184661,United States
+WV,West Virginia,54,54,62756,United States
+WI,Wisconsin,55,55,169635,United States
+WY,Wyoming,56,56,253335,United States
