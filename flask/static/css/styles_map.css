@@ -1,0 +1,52 @@
+#map,
+body,
+html {
+  position:static;
+  height:100%;
+  width: 100%;
+  
+}
+
+.h1 {
+  text-align: center;
+}
+
+.h3 {
+  text-align: center;
+
+}
+
+.panel {
+  margin-bottom: 20px;
+}
+
+.panel-heading {
+  height: 50px;
+  width: 200px;
+  background-color:rgb(202, 199, 199);
+  text-align:center;
+  border-style: solid;
+}
+
+#state-metadata,
+.panel-body {
+  height:100px;
+  width: 200px;
+  border-style: solid;
+
+}
+
+#map-frame {
+  height: 675px;
+  width: 675px;
+  position: static;
+  border-style: solid;
+  border-color: gray;
+  border-width: 5px;
+  
+}
+
+.bar {
+  height: 300px !important;
+  width: 300px !important;
+}
