@@ -32,7 +32,6 @@ app = Flask(__name__)
 cors = CORS(app)
 
 app.config['JSON_SORT_KEYS'] = False
-
     
 @app.route("/map")
 def map ():
@@ -68,7 +67,7 @@ def types ():
 def state ():
     # print(Base.classes.keys())
     state = session.query(State.state_abbrev, State.state, State.area_sqkm, State.country).all()
-    df4 = pd.DataFrame(state,columns=['state_abbrev', 'state', 'area_sqkm', 'country']).to_dict("records")
+    df4 = pd.DataFrame(state, columns=['state_abbrev', 'state', 'area_sqkm', 'country']).to_dict("records")
     session.close()
 
     return jsonify(df4)

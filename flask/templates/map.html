@@ -23,7 +23,7 @@
     <!-- D3 library -->
     <script src="https://d3js.org/d3.v5.min.js"></script>
     
-    
+    <script type="text/javascript" src="static/js/logic.js"></script>
 
 </head>
 <body>
@@ -36,26 +36,26 @@
   
 
     <div class = "row">
-      <div class = "col-md-12"> 
-        <div id="map-frame">
-          <div id="map"></div>
-        </div>
-      </div>
-    </div>
-
-  
-
-  
-    <div class="row">
-      <div class="col-md-2">
+      <div class="col-md-6">
         <div class="panel panel-primary">
           <div class="panel-heading">
             <h3 class="panel-title">State Info</h3>
           </div>
-            <div id="sample-metadata" class="panel-body"></div>
+          <div id="state-metadata" class="panel-body">
+            <p id="State"></p>
+            <p id="Meteroties-Found"></p>
+          </div>
+        </div>
+        <div id="map-frame">
+          <div id="map"></div>
         </div>
       </div>
+      <div class="chart-container col-md-6">
+        <div class="bar-frame">
+          <canvas id="bar-chart"></canvas>
+        </div>
     </div>
+    
   
 
     <div class="col-md-5">

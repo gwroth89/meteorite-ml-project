@@ -3,7 +3,8 @@ body,
 html {
   position:static;
   height:100%;
-  width: 100%
+  width: 100%;
+  
 }
 
 .h1 {
@@ -20,26 +21,27 @@ html {
 }
 
 .panel-heading {
+  height: 50px;
+  width: 200px;
   background-color:rgb(202, 199, 199);
   text-align:center;
-  border-bottom-style: solid;
+  border-style: solid;
 }
 
-/* #map-container-fluid {
-  position: center;
-  height: 100%;
-  width: 100%;
-  margin-bottom: 5px;
-  border-bottom-color: gray;
-  border-bottom-width: 4px;
-} */
+#state-metadata,
+.panel-body {
+  height:100px;
+  width: 200px;
+  border-style: solid;
 
-#map-frame,
- .panel {
+}
+
+#map-frame {
   height: 675px;
   width: 675px;
   position: static;
   border-style: solid;
   border-color: gray;
   border-width: 5px;
+  
 }
