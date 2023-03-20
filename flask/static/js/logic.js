@@ -145,11 +145,17 @@ function createMap(meteors) {
                     layer.setStyle(statehighlight);
                 },
         
+
+
+
                 // Reset state style when mouse leaves state
                 mouseout: e=> {
                     layer.setStyle(stateStyle);
                 },
         
+
+
+
                 //create click events
                 click: e=> {
                     //initialize an empty array to hold latlng of the state clicked
@@ -161,11 +167,13 @@ function createMap(meteors) {
                     d3.select("#State").text(`State: ${state_name}`)
                     
                     stateFilter = stateDict[state_name]
-
-                    d3.json(impact_data).then(function(mcounter) {
-                        // pass data to getmarkers function 
+                    
+                    //d3 call to pass data to m_state func directly below
+                    d3.json(impact_data).then(function(mcounter) { 
                         m_state(mcounter)
                     })
+                
+                    //function to convert the state abbrev to full name and instert into state info box 
                     function m_state(state_meteors){
                         m_counter = 0
                         for (let i = 0; i < Object.keys(state_meteors).length; i++) {
@@ -174,6 +182,118 @@ function createMap(meteors) {
                             }
                             d3.select("#Meteroties-Found").text(`Meteorites Found: ${m_counter}`)
                         }
+
+
+
+                    //d3 call to get class data
+                    d3.json(state_cover).then(function(cover_response) {
+                    // pass data to updateBar function 
+                    updateBar(cover_response)
+                    })
+
+                    //define function for updating the barChart
+                    function updateBar (state_cover_response) {
+                        //initialize bar chart and variable
+                        let barChart;
+
+                        let Bare = 0;
+                        let CropL= 0;
+                        let Forest = 0;
+                        let GrsL = 0;
+                        let ShrubL =0;
+                        let Sparse_Veg = 0;
+                        let Urban = 0;
+                        let Water = 0;
+                        let WetL = 0;
+                        console.log(state_cover_response)
+                        
+                        //loop through to grab the cover of each state
+                        for (let i = 0; i < Object.keys(state_cover_response).length; i++) {
+                            if (state_cover_response[i].state_abbrev === stateFilter && state_cover_response[i].variable === 'BARE') {
+                                Bare = state_cover_response[i].value; 
+
+                            } else if (state_cover_response[i].state_abbrev === stateFilter && state_cover_response[i].variable === 'CROPL') {
+                                CropL = state_cover_response[i].value;
+
+                            } else if (state_cover_response[i].state_abbrev === stateFilter && state_cover_response[i].variable === 'FOREST') {
+                                Forest = state_cover_response[i].value;
+
+                            } else if (state_cover_response[i].state_abbrev === stateFilter && state_cover_response[i].variable === 'GRSL') {
+                                GrsL = state_cover_response[i].value;
+
+                            } else if (state_cover_response[i].state_abbrev === stateFilter && state_cover_response[i].variable === 'SHRUBL') {
+                                ShrubL = state_cover_response[i].value;
+
+                            } else if (state_cover_response[i].state_abbrev === stateFilter && state_cover_response[i].variable === 'SPARSE_VEGETATION') {
+                                Sparse_Veg = state_cover_response[i].value;
+
+                            } else if (state_cover_response[i].state_abbrev === stateFilter && state_cover_response[i].variable === 'URBAN') {
+                                Urban = state_cover_response[i].value;
+
+                            } else if (state_cover_response[i].state_abbrev === stateFilter && state_cover_response[i].variable === 'WATER') {
+                                Water = state_cover_response[i].value;
+
+                            } else if (state_cover_response[i].state_abbrev === stateFilter && state_cover_response[i].variable === 'WETL') {
+                                WetL = state_cover_response[i].value;
+                            }}
+                         
+                        //put cover values in a list for barChart    
+                        let cover_list = [Bare, CropL, Forest, GrsL, ShrubL, Sparse_Veg, Urban, Water, WetL]
+
+                        //Clear barChart if on exists
+                        if (barChart) {
+                            barChart.destroy()
+                        }
+
+                        //Create new barChart
+                        barChart = new Chart(document.getElementById('bar'), {
+                            type: 'bar',
+                            data: {
+                                labels: ['Bare', 'Crop Land', 'Forest', 'Grass Land', 'Shrub Land', 'Sparse Veg.', 'Urban', 'Water', 'Wet Land'],
+                                datasets: [{
+                                    data: cover_list,
+                                    backgroundColor: ['#D5D4CF', '#E4B513', '#0EA010', '#39F441', '#ABF9AF', '#BFF477', '#707676', '#4666E8', '#16B6A8']
+                                }]
+                            },
+                            options: {
+                                plugins: {
+                                    title: {
+                                        display: true,
+                                        text: 'State Land Cover'
+                                    }
+                                },
+                                legend:{
+                                    display: false
+                                },
+                                scales: {
+                                    datasets:[{
+                                        display: true,
+                                        barPercentage: 1.3,
+                                        ticks: {
+                                            autoSkip: false,
+                                            max: (Math.max(cover_list)+5)
+                                        }
+                                    }],
+                                    xAxes: [{
+                                        ticks: {
+                                            beginAtZero: true,
+                                        }
+                                    }],
+                                    yAxes: [{
+                                        ticks: {
+                                            beginAtZero: true,
+                                        },
+                                        scaleLabel: {
+                                            display: true,
+                                            labelString: "Square Kilometers in Thousands"
+                                        }
+                                    }],
+
+                                }
+                            }
+                        });
+                    }
+                    
                     }
                 }
             })
@@ -183,25 +303,6 @@ function createMap(meteors) {
 
 }
 marker_list = []
-
-
-
-
-
-//Create function for updating a bar chart on the landcover in each state
-let barChart;
-function updateBar(cover_response) {
-    
-    cover_state = document.querySelector("#State")
-    cover_state.text()
-    
-}
-
-//d3 call to get class data
-d3.json(state_cover).then(function(cover_response) {
-    // pass data to getmarkers function 
-    updateBar(cover_response)
-})
 
 
 

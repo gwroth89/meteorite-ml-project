@@ -72,5 +72,13 @@ def state ():
 
     return jsonify(df4)
 
+@app.route("/types-impacts")
+def types_impacts ():
+    types_impact = session.query(Meteorite_main.id, Meteorite_main.recclass, Meteorite_main.mass_grams, Meteorite_main.state_abbrev, Meteorite_types.meteorite_class).all()
+    df5 = pd.DataFrame(types_impact, columns=['id', 'recclass', 'mass_grams', 'state_abbrev', 'meteorite_class']).to_dict("records")
+    session.close()
+
+    return jsonify(df5)
+
 if __name__ == "__main__":
     app.run(debug=True)

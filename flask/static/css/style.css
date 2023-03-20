@@ -45,3 +45,8 @@ html {
   border-width: 5px;
   
 }
+
+.bar {
+  height: 300px !important;
+  width: 300px !important;
+}
