@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+  <title>Meteorites - Modelling & Analysis</title>
+    <!-- Icon for window -->
+    <link rel="icon" type="image/x-icon" href="../templates/assets/favicon.ico" />
+    <!-- Font awesome icons -->
+    <script src="https://kit.fontawesome.com/2e362d4438.js" crossorigin="anonymous"></script>
+    <!-- Bootstrap 4 Link -->
+    <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.0/lux/bootstrap.min.css" rel="stylesheet" integrity="sha384-smnSwzHqW1zKbeuSMsAM/fMQpkk7HY11LuHiwT8snL/W2QBoZtVCT4H5x1CEcJCs" crossorigin="anonymous">
+
+    <!-- Insert link to customized stylesheet here --> 
+  <!--------------------------> <!-------------------------->
+
+    <!-- Link to D3 -->
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+  <!-- Link to Plotly -->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  </head>
+
+  <body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand mt-3" href="index.html"><h2 class="text-dark ml-2">Meteorites - Visualization & Prediction</h2></a>
+          <ul class="navbar-nav mr-auto"></ul>
+          <ul class="nav navbar-nav navbar-right-custom">
+          <li class="nav-item">
+          <li class="nav-item">
+            <a class="nav-link" href="xxxxxxxxx">Analysis</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="xxxxxxxxxxxxxxxxxx">Meteorites Predictions</a>
+          </li>
+          </ul>
+      </div>
+    </nav>
+    <!-- Image header -->
+        <div class= "container">
+          <div class="row">
+              <div class="col-md-12">  
+                <img class="col-md-12" id="photo" src="../templates/assets/AdobeStock_342363852 (1).jpeg"/>   
+              </div>
+          </div>
+        </div>  
+
+        <!-- Page Content-->
+        <br>
+        <br>
+        <div class="container px-lg-5">
+            <!-- Row 2 -->
+            <div class="p-3 row">
+                <!-- Col 1 -->
+                <div class="col-md-12 text-center" style="font-size: 26px">
+                    <body>Project Summary
+                    </body>
+                </div>
+            </div>
+        </div>
+        <div class="container px-lg-5">
+            <!-- Row 2 -->
+            <div class="p-3 row">
+                <!-- Col 1 -->
+                <div class="col-md-12">
+                    <body>The goal of our project was to learn whether we could predict the likelihood that a meteorite was seen as it fell rather than being found without visual confirmation. Then, taking the additional step to identify what features made it more likely that a meteorite would be seen falling.
+                    </body>
+                </div>
+            </div>
+        </div>
+        <div class="container px-lg-5">
+            <!-- Row 2 -->
+            <div class="p-3 row">
+                <!-- Col 1 -->
+                <div class="col-md-12 text-center" style="font-size: 26px">
+                    <body>Modelling
+                    </body>
+                </div>
+            </div>
+        </div>
+            <div class="container px-lg-5">
+                <!-- Row 2 -->
+                <div class="p-3 row">
+                    <!-- Col 1 -->
+                    <div class="col-md-8">
+                        <body>We trialed several models (Linear Regression, Logistic Regression, K Nearest Neighbors, Support Vector Classifier, and Hierarchical Clustering) in our analysis and ultimately found unsupervised models did a better job of predicting whether a meteorite had been seen falling than supervised models. Linear regression was basically worthless and logistic regression performed better but still not to the level of some other models. We had better success with SVC and Hierarchical Clustering but our strongest performing model was K Nearest Neighbors, with a high degree of accuracy starting at about 5 k-neighbors. 
+                        </body>
+                    </div>
+                    <!-- Col 2 -->
+                    <div class="col-md-4">
+                    <img src="../templates/assets/knearest.png" class="img-fluid" alt="k-nearest">
+                    </div>
+                </div>
+            </div>
+            <div class="container px-lg-5">
+                <!-- Row 2 -->
+                <div class="p-3 row">
+                    <!-- Col 1 -->
+                    <div class="col-md-12 text-center" style="font-size: 26px">
+                        <body>Feature Importance
+                        </body>
+                    </div>
+                </div>
+            </div>
+            <div class="container px-lg-5">
+                <!-- Row 1 -->
+                <div class="row">
+                    <!-- Col 1 -->
+                    <div class="col-md-6">
+                        <img src="../templates/assets/feature_importance.png" class="img-fluid" alt="features">
+                    </div>
+                    <!-- Col 2 -->
+                    <div class="col-md-6">
+                        <body>We used a Random Forest model to identify key features of meteorites seen falling and found Longitude, Elevation, Year, & Mass to be the largest overall predictors. Longitude is interesting as globally, there appear to be several hotspots that skew meteorite finds. The United States seems to have a relatively high proportion of meteorites centered around the Southwestern states. Meteorite finds have accelerated over time, likely due to population increase and better knowledge of what constitutes a meteorite. Mass also popped in terms of feature importance, which makes sense as only the largest meteors can even leave a meteorite behind. We did expect meteorite composition and land cover type (forest, shrubland, bare earth, etc.) to have a larger predictive effect than they did. A lot of the research we did in the lead up to our analysis indicated that deserts and farmland were ideal locations for finding meteorites, but we were unable to validate this with our analysis.
+                        </body>
+                    </div>
+                </div>
+            </div>
+        <!-- Footer-->
+        <footer class="py-5 bg-dark">
+            <div class="container"><p class="m-0 text-center text-white">Copyright &copy; FinalProject ~ Team 5</p></div>
+        </footer>
+        
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        
+        <!-- Core theme JS-->
+        <script src="https://github.com/gwroth89/meteorite-ml-project/js/scripts.js"></script> -->
+       
+
+    </body>
+</html>
