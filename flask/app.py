@@ -37,9 +37,18 @@ app.config['JSON_SORT_KEYS'] = False
 def map ():
     return render_template('map.html')
 
+@app.route("/home")
+def home ():
+    return render_template('index.html')
+
+@app.route("/analysis")
+def analysis ():
+    return render_template('analysis.html')
+
+
 @app.route("/landcover")
 def welcome ():
-    # print(Base.classes.keys())
+    
     land = session.query(Landcover.state_abbrev, Landcover.variable, Landcover.value).all()
     df = pd.DataFrame(land,columns=['state_abbrev', 'variable', 'value']).to_dict("records")
     session.close()
@@ -56,7 +65,7 @@ def main ():
 
 @app.route("/types")
 def types ():
-    # print(Base.classes.keys())
+    
     type = session.query(Meteorite_types.recclass, Meteorite_types.meteorite_class_subclass, Meteorite_types.meteorite_class, Meteorite_types.meteorite_type).all()
     df3 = pd.DataFrame(type,columns=['recclass', 'meteorite_class_subclass', 'meteorite_class', 'meteorite_type']).to_dict("records")
     session.close()
@@ -65,7 +74,7 @@ def types ():
 
 @app.route("/state")
 def state ():
-    # print(Base.classes.keys())
+    
     state = session.query(State.state_abbrev, State.state, State.area_sqkm, State.country).all()
     df4 = pd.DataFrame(state, columns=['state_abbrev', 'state', 'area_sqkm', 'country']).to_dict("records")
     session.close()
@@ -75,11 +84,6 @@ def state ():
 @app.route("/types-impacts")
 def types_impacts ():
     types_impact = session.query(Meteorite_main.id, Meteorite_main.recclass, Meteorite_main.mass_grams, Meteorite_main.state_abbrev, Meteorite_types.meteorite_class).where(Meteorite_main.recclass == Meteorite_types.recclass).all()
-    
-    # for Meteorite_main.recclass, Meteorite_types.meteorite_class in types_impact:
-    #     for Meteorite_types.meteorite_class in row.Meteorite_types.meteorite_class:
-            # print(Meteorite_main.id, Meteorite_main.recclass, Meteorite_main.mass_grams, Meteorite_main.state_abbrev, Meteorite_types.meteorite_class).join(Meteorite_types.meteorite_class)
-
     df5 = pd.DataFrame(types_impact, columns=['id', 'recclass', 'mass_grams', 'state_abbrev', 'meteorite_class']).to_dict("records")
     session.close()
 
