@@ -74,7 +74,12 @@ def state ():
 
 @app.route("/types-impacts")
 def types_impacts ():
-    types_impact = session.query(Meteorite_main.id, Meteorite_main.recclass, Meteorite_main.mass_grams, Meteorite_main.state_abbrev, Meteorite_types.meteorite_class).all()
+    types_impact = session.query(Meteorite_main.id, Meteorite_main.recclass, Meteorite_main.mass_grams, Meteorite_main.state_abbrev, Meteorite_types.meteorite_class).where(Meteorite_main.recclass == Meteorite_types.recclass).all()
+    
+    # for Meteorite_main.recclass, Meteorite_types.meteorite_class in types_impact:
+    #     for Meteorite_types.meteorite_class in row.Meteorite_types.meteorite_class:
+            # print(Meteorite_main.id, Meteorite_main.recclass, Meteorite_main.mass_grams, Meteorite_main.state_abbrev, Meteorite_types.meteorite_class).join(Meteorite_types.meteorite_class)
+
     df5 = pd.DataFrame(types_impact, columns=['id', 'recclass', 'mass_grams', 'state_abbrev', 'meteorite_class']).to_dict("records")
     session.close()
 
