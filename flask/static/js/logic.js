@@ -62,7 +62,7 @@ let stateDict = {
 
 //read in data
 let impact_data = "http://127.0.0.1:5000/main";
-let class_data = "http://127.0.0.1:5000/types";
+let class_data = "http://127.0.0.1:5000/types-impacts";
 let state_cover ="http://127.0.0.1:5000/landcover";
 let lng;  
 let lat;
@@ -257,7 +257,7 @@ function createMap(meteors) {
                             },
                             options: {
                                 responsive: true,
-                                maintainAspectRatio: false,
+                                maintainAspectRatio: true,
                                 plugins: {
                                     title: {
                                         display: true,
@@ -295,8 +295,91 @@ function createMap(meteors) {
                             }
                         });
                     }
+
+                    //d3 call to get class data
+                    d3.json(class_data).then(function(class_response) {
+                        // pass data to updateBubble function 
+                    updateBubble(class_response)
+                    })
                     
+                    function updateBubble(state_type_response) {
+                        let bubbleChart;
+
+                        let sample_data = state_type_response.filter(obj=>obj.state_abbrev == stateFilter)
+                            
+                            id_list = []
+                            recclass_list = []
+                            mass_grams_list = []
+                            meteorite_class_list = []
+                            id_count_list = []
+                            color_list = []
+                            id_counter = 0
+                            //filter datat by selected state and fill above lists with needed data
+                            for (let i = 0; i < Object.keys(sample_data).length; i++) {
+                                if (sample_data[i].state_abbrev === stateFilter) {
+                                    id_list.push(sample_data[i].id);
+                                    id_count_list.push(id_counter)
+                                    mass_grams_list.push(sample_data[i].mass_grams);
+                                    meteorite_class_list.push(sample_data[i].meteorite_class)
+                                    id_counter++
+
+                            }}
+                            for (let i = 0; i < meteorite_class_list.length; i++) {
+                                if (meteorite_class_list[i] === "Achrondrite") {
+                                    color_list.push('rgb(66, 135, 245)');
+
+                                } else if (meteorite_class_list[i] === "Chrondrite") {
+                                    color_list.push('rgb(35, 214, 26)');
+
+                                } else if (meteorite_class_list[i] === "Iron") {
+                                    color_list.push('rgb(153, 72, 11)');
+
+                                } else if (meteorite_class_list[i] === "Mesosiderite") {
+                                    color_list.push('rgb(219, 200, 50)');
+
+                                } else if (meteorite_class_list[i] === "Pallasite") {
+                                    color_list.push('rgb(209, 19, 38)');
+                                }
+                            }
+
+
+                            //define variables needed for bubble chart
+                            let bubblex = id_count_list
+                            let bubbley = mass_grams_list
+                            let bubMarkerSize = mass_grams_list
+                            let bubbleColor = color_list 
+                            let bubbleText = id_list.map(id => "Meteorite ID: " + id)
+                            console.log(bubblex)
+                            console.log(bubbley)
+                            console.log(bubMarkerSize)
+                            console.log(bubbleText)
+                            //set up bubble chart
+                            bubble_data = [{
+                                x: bubblex,
+                                y: bubbley,
+                                mode:'markers',
+                                marker: {
+                                    sizemode: 'area',
+                                    size:  bubMarkerSize,
+                                    sizemax: 1000,
+                                    color: color_list
+
+                                }
+                            }];
+                            
+                            let bubble_layout = {
+                                title: "Meteorites by Class by State: " + stateFilter,
+                                height: 800,
+                                width: 1300,
+                                showlegend: true
+
+                            };
+                            
+                            Plotly.newPlot("bubble", bubble_data, bubble_layout);
+                    };
+
                     }
+
                 }
             })
         }        
@@ -305,8 +388,6 @@ function createMap(meteors) {
 
 }
 marker_list = []
-
-
 
 
 
