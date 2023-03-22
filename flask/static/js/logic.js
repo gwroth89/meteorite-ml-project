@@ -61,9 +61,9 @@ let stateDict = {
 
 
 //read in data
-let impact_data = "http://127.0.0.1:5000/main";
-let class_data = "http://127.0.0.1:5000/types-impacts";
-let state_cover ="http://127.0.0.1:5000/landcover";
+let impact_data = "/main";
+let class_data = "/types-impacts";
+let state_cover ="/landcover";
 let lng;  
 let lat;
 let myMap; 
