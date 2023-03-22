@@ -370,8 +370,8 @@ function createMap(meteors) {
                             let bubble_layout = {
                                 title: "Meteorites by Class by State: " + stateFilter,
                                 height: 800,
-                                width: 1300,
-                                showlegend: true
+                                width: 1200,
+                                showlegend: false
 
                             };
                             
