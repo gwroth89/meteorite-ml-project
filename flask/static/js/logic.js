@@ -342,7 +342,6 @@ function createMap(meteors) {
                                 }
                             }
 
-
                             //define variables needed for bubble chart
                             let bubblex = id_count_list
                             let bubbley = mass_grams_list
@@ -388,9 +387,6 @@ function createMap(meteors) {
 
 }
 marker_list = []
-
-
-
 //add markers
 function getmarkers(response) { 
 
@@ -422,4 +418,3 @@ d3.json(impact_data).then(function(response) {
     // pass data to getmarkers function 
     getmarkers(response)
 })
-

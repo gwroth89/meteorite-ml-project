@@ -90,4 +90,4 @@ def types_impacts ():
     return jsonify(df5)
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host='0.0.0.0')
