@@ -46,8 +46,8 @@ The home page includes an embedded tableau map of the world that shows meteor lo
 
 The analysis page goes into our analysis of different machine learning models we used to try to determine the likelyhood of if a meteorite fell in a location, would it have been seen?
 
-{insert picture of analysis page here}
+<h3> <img width="533" alt="Analysis Page" src="flask/static/assets/analysis_page.PNG"> </h3>
 
 The map page was built out with a focus on the US due to the US having a high density of impacts compared to many other places. It was built out with the goal of showing as many features that affect if a meteorite might be seen.
 
-{insert picture of map page here}
+<h3> <img width="533" alt="Map Page" src="flask/static/assets/map_page.PNG"> </h3>

@@ -37,9 +37,9 @@ html {
 }
 
 #map-frame {
-  height: 675px;
-  width: 675px;
-  position: static;
+  height: 800px;
+  width: 1000px;
+  position: relative;
   border-style: solid;
   border-color: gray;
   border-width: 5px;
