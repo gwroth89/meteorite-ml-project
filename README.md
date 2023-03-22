@@ -48,6 +48,6 @@ The analysis page goes into our analysis of different machine learning models we
 
 <h3> <img width="533" alt="Analysis Page" src="flask/static/assets/analysis_page.PNG"> </h3>
 
-The map page was built out with a focus on the US due to the US having a high density of impacts compared to many other places. It was built out with the goal of showing as many features that affect if a meteorite might be seen.
+The map page was built out with a focus on the US due to the US having a high density of impacts compared to many other places. It was built out with the goal of showing as many features that affect if a meteorite might be seen. Features of this page include an interactive map that shows all meteorites found in the US, marked as red dots on the map. Once a state is clicked, the State Info box is populated with the state name, and the number of meteorites found in that state. A bar chart is populated that shows the percent of land cover of the selected state, classes are Bare, Crop Land, Forest, Grass Land, Shrub Land, Sparse Vegetation, Urban, Water, and Wetlands. A bubble chart is also populated with the indexed meteor found for that state on the x-axis, and the mass-grams of the meterite on the y-axis. The size of the bubble is tied into the mass of it. The color of the bubble ties into the material of it, different materials include Achrondrite, Chrondrite, Iron, Mesosiderite, and Pallasite.
 
 <h3> <img width="533" alt="Map Page" src="flask/static/assets/map_page.PNG"> </h3>
